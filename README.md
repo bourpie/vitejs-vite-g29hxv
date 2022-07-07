@@ -4,4 +4,4 @@
 
 # Frontend challenges
 
-- React rating component
+- [React rating component](https://vitejs-vite-g29hxv--3000.local.webcontainer.io/Ratings)
