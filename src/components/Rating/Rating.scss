@@ -73,7 +73,7 @@
 .rating {
   border-radius: 20px;
   padding: 2rem;
-  width: 400px;
+  max-width: 400px;
 
   &-stars {
     display: flex;
