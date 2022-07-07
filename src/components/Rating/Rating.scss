@@ -1,0 +1,121 @@
+:root {
+  --clr-primary-400: hsl(25, 97%, 53%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-neutral-100: hsl(217, 12%, 63%);
+  --clr-neutral-300: hsl(216, 12%, 54%);
+  --clr-neutral-800: hsl(213, 19%, 18%);
+  --clr-neutral-900: hsl(216, 12%, 8%);
+
+  --ff-overpass: 'Overpass', sans-serif;
+
+  --fs-body: 1rem;
+}
+
+.ff-overpass {
+  font-family: var(--ff-overpass);
+}
+
+@for $i from 1 through 16 {
+  .fs-#{$i} {
+    font-size: calc(#{var(--fs-body)} * (#{$i} / 4));
+  }
+}
+
+.color-primary-400 {
+  color: var(--clr-primary-400);
+}
+
+.color-white {
+  color: var(--clr-white);
+}
+
+.color-neutral-100 {
+  color: var(--clr-neutral-100);
+}
+
+.color-neutral-300 {
+  color: var(--clr-neutral-300);
+}
+
+.color-neutral-800 {
+  color: var(--clr-neutral-800);
+}
+
+.color-neutral-900 {
+  color: var(--clr-neutral-900);
+}
+
+.bgcolor-primary-400 {
+  background-color: var(--clr-primary-400);
+}
+
+.bgcolor-white {
+  background-color: var(--clr-white);
+}
+
+.bgcolor-neutral-100 {
+  background-color: var(--clr-neutral-100);
+}
+
+.bgcolor-neutral-300 {
+  background-color: var(--clr-neutral-300);
+}
+
+.bgcolor-neutral-800 {
+  background-color: var(--clr-neutral-800);
+}
+
+.bgcolor-neutral-900 {
+  background-color: var(--clr-neutral-900);
+}
+
+.rating {
+  border-radius: 20px;
+  padding: 60px 40px;
+  max-width: 400px;
+
+  &-stars {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  &-form {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding-top: 1rem;
+
+    label {
+      display: grid;
+      place-content: center;
+      height: 40px;
+      width: 40px;
+      background: var(--clr-neutral-300);
+      border-radius: 50%;
+      cursor: pointer;
+
+      &:hover {
+        background: var(--clr-primary-400);
+      }
+    }
+
+    
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
