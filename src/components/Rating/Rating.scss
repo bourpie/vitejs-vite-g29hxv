@@ -151,9 +151,6 @@
 
   &-thanks {
     text-align: center;
-    img {
-      margin: 0 auto 1.5rem auto;
-    }
     h1 {
       background: var(--clr-neutral-700);
       width: 200px;
@@ -162,36 +159,8 @@
       margin: 0 auto 2rem auto;
       padding: 1rem 0;
     }
-    h2 {
-      margin-bottom: 1.5rem;
-    }
     p {
       color: var(--clr-neutral-100);
     }
-  }
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap; /* added line */
-  border: 0;
-}
-
-.fade-in {
-  animation: fadeIn 300ms ease-in;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
