@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import star from './icon-star.svg';
+import thankyou from './illustration-thank-you.svg';
 import './Rating.scss';
 const Rating = () => {
   const [rate, setRate] = useState([0]);
@@ -7,7 +8,6 @@ const Rating = () => {
   const handleClick = (e, val) => {
     let arr = [...Array(val).keys()];
     setRate(arr);
-    console.log(arr);
   };
   const handleSubmit = () => {
     setSubmitted(true);
@@ -15,7 +15,15 @@ const Rating = () => {
   return (
     <div className="rating ff-overpass bgcolor-neutral-800">
       {submitted ? (
-        <h1>Allo</h1>
+        <div className={`rating-thanks ${submitted ? 'fade-in' : ''}`}>
+          <img src={thankyou} className="starImg" alt="" />
+          <h1>{`You selected ${rate.length} out of 5`}</h1>
+          <h2 className="fs-8">Thank you!</h2>
+          <p>
+            We appreciate you taking the time to give a rating. If you ever need
+            more support, don't hesitate to get in touch!
+          </p>
+        </div>
       ) : (
         <>
           <div
@@ -25,7 +33,9 @@ const Rating = () => {
           >
             {rate &&
               rate.map((num) => (
-                <img key={num} src={star} className="starImg" alt="" />
+                <span>
+                  <img key={num} src={star} className="starImg" alt="" />
+                </span>
               ))}
           </div>
           <h1 className="color-white fs-6">How did we do?</h1>
@@ -33,8 +43,8 @@ const Rating = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
             vero dicta, ducimus aspernatur odit voluptates reprehenderit.
           </p>
-          <form onSubmit={handleSubmit}>
-            <ol className="rating-form">
+          <form onSubmit={handleSubmit} className="rating-form">
+            <ol>
               {[...Array(5).keys()].map((input, i) => (
                 <li>
                   <input
